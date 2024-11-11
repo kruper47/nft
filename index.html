@@ -21,34 +21,18 @@
   <div id="game">
     <div id="score">Score: 0</div>
     <button id="clickButton">Click me!</button>
-    <div id="timer">Time left: 10</div>
   </div>
 
   <script>
     let score = 0;
-    let timeLeft = 10;
 
     const scoreDisplay = document.getElementById("score");
-    const timerDisplay = document.getElementById("timer");
     const clickButton = document.getElementById("clickButton");
 
     clickButton.addEventListener("click", () => {
-      if (timeLeft > 0) {
-        score++;
-        scoreDisplay.textContent = "Score: " + score;
-      }
+      score++;
+      scoreDisplay.textContent = "Score: " + score;
     });
-
-    const countdown = setInterval(() => {
-      if (timeLeft > 0) {
-        timeLeft--;
-        timerDisplay.textContent = "Time left: " + timeLeft;
-      } else {
-        clearInterval(countdown);
-        clickButton.disabled = true;
-        timerDisplay.textContent = "Game Over! Final Score: " + score;
-      }
-    }, 1000);
   </script>
 
 </body>
